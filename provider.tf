@@ -1,4 +1,4 @@
 provider "google" {
-    credentials = file("key.json")
+    credentials = file("tf-service_account-key.json")
     project = "tf-project-486307"
 }
