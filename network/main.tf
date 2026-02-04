@@ -99,7 +99,7 @@ resource "google_compute_instance" "public_vm" {
   metadata = {
     environment = "dev"
     #keys for creating a user named faiz inside a VM
-    ssh-keys = "faiz:${file("C:/Users/ws_htu769/Desktop/Cloud-Admin/gcp_with_terraform/gcp-vm-keys.pub")}"
+    ssh-keys = "faiz:${var.ssh_public_key}"
 }
 
   metadata_startup_script = "echo hi > /test.txt"
@@ -126,7 +126,7 @@ resource "google_compute_instance" "private_vm" {
   tags = ["firewall-rule-for-private-vm"]
 
   metadata = {
-    ssh-keys = "faiz:${file("C:/Users/ws_htu769/Desktop/Cloud-Admin/gcp_with_terraform/gcp-vm-keys.pub")}"
+    ssh-keys = "faiz:${var.ssh_public_key}"
   }
 
   boot_disk {

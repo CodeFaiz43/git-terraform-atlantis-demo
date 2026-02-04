@@ -2,12 +2,15 @@
 .terraform/
 *.tfstate
 *.tfstate.*
-.terraform.lock.hcl
+*.json
+*.key
+*.pem
 
 # Secrets
 *.pem
 *.key
 *.json
+*.md
 
 # OS / Editor
 .vscode/
