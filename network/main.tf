@@ -70,9 +70,10 @@ resource "google_compute_instance" "public_vm" {
   tags = ["firewall-rule-for-public-vm"]
 
   labels = {
-    environment = "dev"
-    managed_by  = "terraform"
-    team        = "platform"
+    environment   = "dev"
+    managed_by    = "terraform"
+    team          = "platform"
+    atlantis_test = "true"
   }
 
   boot_disk {
@@ -100,9 +101,9 @@ resource "google_compute_instance" "public_vm" {
     environment = "dev"
     #keys for creating a user named faiz inside a VM
     ssh-keys = "faiz:${var.ssh_public_key}"
-}
+  }
 
-  metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "echo hello from terraform > /test.txt"
 
   #This is the identity the VM uses to talk to GCP APIs.
   service_account {
