@@ -1,0 +1,19 @@
+version: 3
+
+projects:
+  - name: gcp-network
+    dir: .
+    autoplan:
+      enabled: true
+      when_modified:
+        - "*.tf"
+
+workflows:
+  default:
+    plan:
+      steps:
+        - init
+        - plan
+    apply:
+      steps:
+        - apply
