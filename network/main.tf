@@ -149,3 +149,4 @@ resource "google_compute_instance" "private_vm" {
     google_compute_subnetwork.private_subnet
   ]
 }
+
