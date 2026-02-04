@@ -73,7 +73,7 @@ resource "google_compute_instance" "public_vm" {
     environment = "dev"
     managed_by  = "terraform"
     team        = "platform"
-    demo        = "atlantis1" # added for pr checkout
+    #demo        = "atlantis1" # added for pr checkout
   }
 
   boot_disk {
