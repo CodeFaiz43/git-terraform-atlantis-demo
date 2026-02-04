@@ -73,7 +73,7 @@ resource "google_compute_instance" "public_vm" {
     environment = "dev"
     managed_by  = "terraform"
     team        = "platform"
-    #demo        = "atlantis1" # added for pr checkout
+    demo        = "atlantis4" # added for pr checkout
   }
 
   boot_disk {
@@ -101,7 +101,7 @@ resource "google_compute_instance" "public_vm" {
     environment = "dev"
     #keys for creating a user named faiz inside a VM
     ssh-keys = "faiz:${var.ssh_public_key}"
-}
+  }
 
   metadata_startup_script = "echo hi > /test.txt"
 
@@ -149,3 +149,4 @@ resource "google_compute_instance" "private_vm" {
     google_compute_subnetwork.private_subnet
   ]
 }
+
